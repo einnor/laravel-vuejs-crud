@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => ['web']], function() {
+    Route::get('/vue-js-crud', 'BlogController@vueCrud');
+    Route::resource('/blogs', 'BlogController');
+});
