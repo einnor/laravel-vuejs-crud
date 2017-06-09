@@ -10,7 +10,7 @@ class BlogController extends Controller
 
     public function vueCrud()
     {
-        return view('/vue-js-crud/index');
+        return view('/vue/index');
     }
     
     /**
