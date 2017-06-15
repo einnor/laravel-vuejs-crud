@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::group(['middleware' => ['web']], function() {
-    Route::get('/vue', 'BlogController@vueCrud');
+    Route::get('/', 'BlogController@singlePage');
     Route::resource('/blogs', 'BlogController');
 });

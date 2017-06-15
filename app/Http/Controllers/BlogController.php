@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
 
-    public function vueCrud()
+    public function singlePage()
     {
-        return view('/vue/index');
+        return view('/blogs/index');
     }
     
     /**
@@ -27,7 +27,7 @@ class BlogController extends Controller
                 'total' => $blogs->total(),
                 'per_page' => $blogs->perPage(),
                 'current_page' => $blogs->currentPage(),
-                'latest_page' => $blogs->latestPage(),
+                'last_page' => $blogs->lastPage(),
                 'from' => $blogs->firstItem(),
                 'to' => $blogs->lastItem(),
             ],

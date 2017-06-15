@@ -24,10 +24,10 @@
                     <td>@{{ item.description }}</td>
                     <td>
                         <div class="btn-group">
-                            <button type="button" class="edit-modal btn-warning" @click.prevent="editItem(item)">
+                            <button type="button" class="btn edit-modal btn-warning" @click.prevent="editItem(item)">
                                 <span class="glyphicon glyphicon-edit"></span> Edit
                             </button>
-                            <button type="button" class="delete-modal btn-danger" @click.prevent="deleteItem(item)">
+                            <button type="button" class="btn delete-modal btn-danger" @click.prevent="deleteItem(item)">
                                 <span class="glyphicon glyphicon-trash"></span> Delete
                             </button>
                         </div>
@@ -44,7 +44,7 @@
                     <span aria-hidden="true">«</span>
                 </a>
             </li>
-            <li v-for="pages in pagesNumber" v-bind:class="[ page == isActivated ? 'active' : '' ]">
+            <li v-for="page in pagesNumber" v-bind:class="[ page == isActivated ? 'active' : '' ]">
                 <a href="#" @click.prevent="changePage(page)">@{{ page }}</a>
             </li>
             <li v-if="pagination.current_page < pagination.last_page">
